@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% block content %}
+<section class="lesson-box">
+  <div class="lesson-box-title"><h2>Stage 1: HTML and CSS</h2></div>
+  <div class="lesson-box-content">
+    <h3>Structure</h3>
+      <p>
+        HTML and CSS <em>(<u>C</u>ascading <u>S</u>tyle <u>S</u>heets)</em> are two Languages that work together to bring structure and style, respectively, to a website (JavaScript brings the action). HTML is structured with tags through something called <a href="http://en.wikipedia.org/wiki/Document_Object_Model">DOM</a> <em>(Document Object Model)</em>.
+      </p>
+      <p>
+        The structure of HTML is much like a family tree, where elements branches out into more elements and form relations. Parent elements can have child elements and so on. These relations have significance as to how rules are <u>inherited</u> throughout the structure.
+      </p>
+      <p>
+        The underlying structure of HTML is made up of boxes. When building a HTML document it's best practice to start by outlining the "box structure" first. The most fundamental building block in this structure is the <code>&lt;div&gt;</code> element.
+      </p>
+      <hr>
+      <h3>Style</h3>
+      <p>
+        In programming it's important to avoid repetition, not only to save time but also to minimize mistakes. By using CSS you can simplify and streamline the styling process by applying the same features to many different elements at the same time.
+      </p>
+      <p>
+        Inheritance is one of the key features of CSS. In general, text properties are inherited from parent elements while box elements are not.
+      </p>
+      <p>
+        In CSS you work with <em>Selectors</em> and <em>Declarations</em>. <em>Declarations</em> are broken down into <em>Properties</em> and <em>Values</em> : <code>selector { property: value; }</code>.
+      </p>
+      <p>
+        There are many different types of <em>Selectors</em> you can work with in CSS. A good explanation of how they work and what they do can be found <a href="https://css-tricks.com/how-css-selectors-work/">here</a>. However, one important function of CSS is that you can precisely specify which <em>HTML element(s)</em>, rules are applied to depending on which type of <em>Selector</em> you use.
+      </p>  	
+	</div>
+</section>
+{% endblock %}

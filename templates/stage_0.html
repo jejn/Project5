@@ -1,0 +1,51 @@
+{% extends "index.html" %}
+{% block content %}
+<section class="lesson-box">
+  <div class="lesson-box-title"><h2>Stage 0: The Basics</h2></div>
+  <div class="lesson-box-content">
+    <h3>The World Wide Web</h3>
+      <p>
+        The web is made up of Billions of HTML <em>(<u>H</u>yper<u>T</u>ext <u>M</u>arkup <u>L</u>anguage)</em> documents connected through <em>Hyperlinks</em>. The content on the Internet is stored on servers that can be accessed through a web browser.
+      </p>
+      <p>
+        A web browser communicate with servers through <em>HTTP (HyperText Transfer Protocol)</em> by entering a <em>URL (Uniform Resource Locator)</em>. The server will in turn respond with a document which the browser interprets and displays.
+      </p>
+      <hr>
+      <h3>HyperText Markup Language</h3>
+      <p>
+        HTML is the language used to visualize the content of the web by a common standard. A HTML document is made up of:
+      </P>
+      <ul>
+        <li>Text content - <em>(What you see)</em></li>
+        <li>Markup - <em>(What it looks like)</em></li>
+        <li>References to other documents - <em>(e.g. images and videos)</em></li>
+        <li>Links to other pages - <em>(Hyperlinks)</em></li>
+      </ul>
+      <hr>
+      <h3>Tags and Elements</h3>
+      <p>
+        HTML code consists of <em>elements</em> containing <em>tags</em>. There's an <em>opening</em> and <em>closing</em> tag. The structure looks like this:
+      <p>
+        <code>&lt;opening-tag&gt;content&lt;/closing-tag&gt;</code>
+      </p>
+      <p>
+        This constitutes an element. <em>Void tags</em> are the exception as they don't require a <em>closing tag</em>. An example of this is the <code>&lt;br&gt;</code> tag.
+      </p>
+      <hr>
+      <h3>Attributes</h3>
+      <p>
+        Tags can also contain <em>Attributes</em> which can, for example, create a link to a different web-page. The <em>Anchor</em> tag is an example of this: <code>&lt;a href="www.udacity.com"&gt;</code> where <code>href</code> is the <em>Attribute</em> and <code>"www.udacity.com"</code> is the <em>value</em>.
+      </p>
+      <hr>
+      <h3>Inline and Block Elements</h3>
+      <p>
+        HTML elements are divided into two different categories: <em>Inline</em> and <em>Block</em>. Inline elements are, as the name suggests; in line, and Block elements have an "invisible box" around them.
+      </p>
+      <hr>
+      <h3>How computers interprets code</h3>
+      <p>
+        When code, such as HTML, is rendered by a web browser it's done so <u>literally</u>. In other words; the computer is not applying any creativity when it "reads" code to fill in blanks or correct for errors <em>(as a human might do)</em>. It also means that it will do <u>exactly</u> what the code tells it to do.
+      </p>    	
+	</div>
+</section>
+{% endblock %}

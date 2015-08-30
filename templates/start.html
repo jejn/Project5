@@ -1,0 +1,84 @@
+{% extends "index.html" %}
+{% block content %}
+<section class="lesson-box">
+    <div class="lesson-box-title"><h2>About</h2></div>
+    <div class="lesson-box-content">
+        <p>
+            This is a page with my personal notes from the Udacity Nanodegree: Introduction to Programming. The notes are divided in to the different stages of the program, which you can find above. For more information about Udacity and its courses go to <a href="https://www.udacity.com">Udacity.com</a>.
+        </p>
+            This course covers everything from the basics of the web and computers to Object Oriented Programming and building basic web applications. Here you'll find the basic concepts of HTML and CSS and a breif introduction to Computer Science.
+        <p>
+        <p>
+            Creating this page is part of the learning process within the course. I hope you'll find it useful.
+        </p>
+        <div class="linked-in">
+            <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+            <script type="IN/MemberProfile" data-id="https://www.linkedin.com/pub/jim-nording/12/171/356" data-format="hover" data-related="false" data-text="Jim Nording"></script>
+        </div>
+    </div>
+</section>
+<section class="guestbook-box">
+    <div class="guestbook-box-title"><h2>Guestbook</h2></div>
+    <div class="guestbook-box-form">
+        <form action="/sign" method="POST">
+            <!-- 'required' attribute will prompt user to fill out fields and 'type="email" will validate email input. 
+            This is not Safari compatible, therefore the test statements below, will prompt user to fill out missing 
+            field and retain already filled out fields. Dicts 'form_errors' and 'form_input_holder' are passed from 
+            main.py for reference values -->
+            <label for="author">Name</label>
+                
+            {% if True not in form_errors.values() %}
+            <div><input type="text" name="author" placeholder="Full name" required></div>
+
+            {% elif (form_errors.name_error == False) and (True in form_errors.values()) %}
+            <div><input type="text" name="author" value="{{ form_input_holder.name_field }}" required></div>
+                
+            {% elif form_errors.name_error == True %}
+            <span><font color="red"><em> Please enter your name</em></font></span>
+            <div><input type="text" name="author" placeholder="(only letters [a-z] allowed)" required></div>
+                    
+            {% endif %}
+
+            <label for="email">E-mail</label>
+
+            {% if True not in form_errors.values() %}
+            <div><input type="email" name="email" placeholder="(will not be displayed)" required></div>
+                
+            {% elif (form_errors.email_error == False) and (True in form_errors.values()) %}
+            <div><input type="email" name="email" value="{{ form_input_holder.email_field }}" required></div>
+                
+            {% elif form_errors.email_error == True %}
+            <span><font color="red"><em>Please enter a valid e-mail</em></font></span>
+            <div><input type="email" name="email" placeholder="example@mail.com" required></div>
+
+            {% endif %}
+
+            <label for="content">Message</label>
+
+            {% if True not in form_errors.values() %}
+            <div><textarea name="content" placeholder="Leave a comment..." maxlenght="500" required></textarea></div>
+                
+            {% elif (form_errors.content_error == False) and (True in form_errors.values()) %}
+            <div><textarea name="content" maxlenght="500" required>{{ form_input_holder.content_field }}</textarea></div>
+                
+            {% elif form_errors.content_error == True %}
+            <span><font color="red"><em>Please enter your message</em></font></span>
+            <div><textarea name="content" placeholder="Leave a comment..." maxlenght="500" required></textarea></div>
+
+            {% endif %}
+
+            <div><button type="submit" name="submit" value="Submit">Submit</button></div>
+        </form>        
+    </div>
+    <div class="guestbook-box-posts">
+
+        {% for greeting in greetings %}
+        <hr>
+        <p><em>{{ greeting.content }}</em></p>
+        <p class="signature">-<b> {{ greeting.author }} </b></p>
+        {% endfor %}
+        
+        <hr>               
+    </div>
+</section>
+{% endblock %}

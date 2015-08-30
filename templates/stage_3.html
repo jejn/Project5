@@ -1,0 +1,47 @@
+{% extends "index.html" %}
+{% block content %}
+<section class="lesson-box">
+  <div class="lesson-box-title"><h2>Stage 3: Object-Oriented Programming (OOP)</h2></div>
+  <div class="lesson-box-content">
+		<h3>Definition</h3>
+      <p>
+        Object-Oriented Programming is a programming concept structured around objects rather than procedures. In OOP the main focus is how data is organized. In class-based OOP, data is stored and structured in classes (as explained below). Objects can modify the internal data (properties) through procedures (methods) encapsulated within the class (more on this below). Another cornerstone in OOP is the interaction between these objects (more on this below).      
+      </p>
+      <p>
+        For a more accurate and elaborate definition please see the Wikipedia <a href="http://en.wikipedia.org/wiki/Object-oriented_programming">atricle</a> on OOP. 
+      </p>
+      <hr>
+      <h3>Class vs. Object</h3>
+      <p>
+        The first and most important concept to understand in OOP is the distinction and relationship between <em>Class</em> and <em>Object</em>. In Python however, everything is an <em>Object</em>: <em>Classes, Instances, Variables, Lists, Integers, Strings</em> etc. This can be a bit confusing as OOP makes a distinction between <em>Class</em> and <em>Object</em>. It's not a problem though as long as you understand that the reference to an <em>Object</em>, in this context, refers to an <em>Object</em> as an <em>Instance of a Class</em> - something concrete, while <em>Class</em> is something abstract. A <em>Class</em> is a template that contains information specifying what attributes and behavior an <em>Object</em> created from that template will have. <em>Class</em> is the abstract - the idea, and an <em>Instance</em> is an <em>Object</em> of that idea.      
+      </p>
+      <hr>
+      <h3>Structure</h3>
+      <p>
+        Within classes, variables are referred to as <em>Attributes</em> or <em>Properties</em> and functions as <em>Methods</em>. The data is said to be <em>Encapsulated</em> within the class which is one of the fundamentals of OOP. The classes in turn will be grouped in files referred to as <em>Modules</em>. <em>Modules</em> can be imported into other modules by adding <code>import</code> and the file name without <code>.py</code> as long as the modules are in the same directory. Once a module has been imported, its classes are accessible to construct instances of that class. In Python there are also built-in <em>Modules</em> in the <em>Python Standard Library</em>. These are imported in the same way.    
+      </p>
+      <p>
+        Within a Class the Attributes can be divided into <em>Class Attributes</em> and <em>Instance Attributes</em> (also referred to as Properties). <em>Class Attributes</em> are placed immediately after the class name and the value will be the same for all instances of that class. Next comes the <em>Constructor</em> that initializes the object or instance. This is done through the <code>__init__</code> method, where the <em>Instance Attributes</em> are placed. These attributes are what defines the instance when created. For example <code>class Person(Human):</code> might have a constructor <code>def __init__(self, name, age, gender)</code> and the <em>Instance Attributes</em> <code>self.name = name</code>, <code>self.age = age</code> and <code>self.gender = gender</code>. Unlike <em>Class Attributes</em>, <em>Instance Attributes</em> are unique to each <em>Instance</em>. 
+       </p>
+      <hr>
+      <h3>Inheritance</h3>
+      <p>
+        Another fundamental of OOP is <em>inheritance</em>. Just as in HTML and CSS, properties will be inherited depending on the relationships. In OOP classes will inherit <em>Properties</em> and <em>Methods</em> from it's ancestors. <code>class Machine(object)</code> is a parent of <code>class Vehicle(Machine)</code> is a parent of <code>class Car(Vehicle)</code> because <code>Car</code> is-a-type-of <code>Vehicle</code> is-a-type-of <code>Machine</code> is-a-type-of <code>(object)</code>. <code>class Car(Vehicle)</code> would have a number of properties defining what an instance of <code>Car</code> would be like. For example there could be a <code>self.engine</code> property. Engine could itself be a class but it wouldn't inherit from <code>class Car(Vehicle)</code> as engine <em>is-<u>not</u>-a-type-of</em> car. We would define the <code>Car</code> - <code>Engine</code> relationship as a <em>has-a</em> relationship.
+      </p>
+      <p>
+        In the <code>class Machine(object)</code> <code>class Vehicle(Machine)</code> <code>class Car(Vehicle)</code> chain, <code>Vehicle</code> inherits <em>Properties</em> and <em>Methods</em> from <code>Machine</code>, and <code>Car</code> inherits from both ancestors. So if there is a method defined in the class <code>Machine</code> then that method will behave the same in all sub-classes. If the same method were to be defined differently in <code>Vehicle</code> then that would override the method in <code>Machine</code> and behave according to the new definition for <code>Vehicle</code> and its sub-classes. This is called <em>method override</em>.  
+      </p>
+      <hr>
+      <h3>Concept (and benefits of OOP)</h3>
+      <p>
+        Just as with classes in CSS, classes in Python can be used to store data that you want to be able to access multiple times and therefore eliminate repetition. A Module works much like a CSS-file that you reference in a HTML document where you can then reuse the code you've written in CSS over and over again.
+      </P>
+      <p>
+        One of the greatest strengths of OOP is how it creates structure and order to programs. As we are able to encapsulate data in classes and group classes in modules, we get a better organization of the code which makes it easier for multiple developers to understand and work together on a project. We can devise, isolate and group data in relevant clusters so that problems solving, debugging and development can be done in parallel. 
+      </p>
+      <p>
+        The idea in OOP is that everything is grouped and organized in a relevant way. Modules, Classes and Objects are separated for structure but at the same time accessible and interconnected for flexibility and function.    
+      </p>      	
+	</div>
+</section>
+{% endblock %}

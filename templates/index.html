@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to Programming</title>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="Stylesheet" type="text/css" href="/static/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+	<header class="headline">
+    <div class="main-header">
+      <h1>NOTES on INTRODUCTION TO PROGRAMMING</h1>
+    </div>
+    <div class="sub-container">
+      <div class="sub-header">
+        <h4>[A <span class="u-color">UDACITY</span> NANODEGREE]</h4>
+      </div>
+      <div class="navstack">
+        <a id="menu"><span class="fa fa-bars fa-lg"></span></a>
+      </div>
+    </div>
+  </header>
+  <nav id="drawer" class="nav">
+    <ul class="nav-list">
+    	<li class="nav-item"><a href="/">About</a></li>
+    	<li class="nav-item"><a href="/stage_0">Zero</a></li>
+    	<li class="nav-item"><a href="/stage_1">One</a></li>
+    	<li class="nav-item"><a href="/stage_2">Two</a></li>
+    	<li class="nav-item"><a href="/stage_3">Three</a></li>
+    	<li class="nav-item"><a href="/stage_4">Four</a></li>
+    	<li class="nav-item"><a href="/stage_5">Five</a></li>
+    </ul>
+  </nav>
+  {% block content %}
+  {% endblock %}
+  <script>
+    /*
+     * From the "Home Town App" project
+     */
+    var menu = document.querySelector('#menu');
+    var main = document.querySelector('main');
+    var drawer = document.querySelector('.nav');
+
+    menu.addEventListener('click', function(e) {
+    drawer.classList.toggle('open');
+    e.stopPropagation();
+    });
+    main.addEventListener('click', function() {
+    drawer.classList.remove('open');
+    });
+    
+  </script>
+</body>
+</html>

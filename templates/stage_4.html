@@ -1,0 +1,106 @@
+{% extends "index.html" %}
+{% block content %}
+<section class="lesson-box">
+  <div class="lesson-box-title"><h2>Stage 4: Building Web Applications</h2></div>
+  <div class="lesson-box-content">
+  	<h3>Networks</h3>
+  	<p>
+  		<em>"A network is a group of entities that can communicate, even though they are not all directly connected"</em>
+  	</p>
+  	<p>
+  		There are 3 fundamentals that are essential for a functioning network:
+  	</p>
+  	<ol>
+  		<li>A way to encode and interpret messages.</li>
+  		<li>A way to route messages.</li>
+  		<li>Rules for deciding priority.</li>
+  	</ol>
+  	<p>
+  		<em>Latency</em> is used to measure the time it takes for a packet of data to reach its receiver. <em>Bandwidth</em> is a measurement of the amount of information that can be transmitted per unit of time. An analogy can be made to the flow of a river; Latency is the speed of the current and Bandwidth is the with and depth of the river.   
+  	</p>
+  	<p>
+  		Information over a computer network is sent in bits. 1 bit is the smallest unit of data and communicates either a 0 or a 1. Bits are essentially carrying yes/no information. By grouping bits together we can create and carry complex data over the network. 
+  	</p>
+  	<hr>
+  	<h3>Protocols and Servers</h3>
+  	<p>
+  		Protocols are a way to facilitate communication on a network. On the Internet we most commonly use the HTTP protocol. HTTP sets the rules for how clients, a web browser for example, and a server interact. An Internet Protocol address (IP address) is a numerical label that specifies each device on a network, a locator. URL's (Uniform Resource Locator) are the human readable locator that is connected to an IP address.   
+  	</p>
+  	<p>
+  		The structure of a URL is as follows: <code>http://www.website.com/index.html</code> where <code>http</code> is the protocol <code>www.website.com</code> is the host and <code>/index.html</code> is the path. Separated from the locator but part of the URL we can add <em>Query parameters</em>. These are "extra" information passed to the server. A query parameter is separated from the path by a <code>?</code> followed by a parameter <code>a=1</code>. Multiple parameters are separated by <code>&amp;</code>. The full URL would look like this <code>http://www.website.com/index.html?a=1&amp;b=2</code>. <em>Fragments</em> can also be added separated by <code>#</code> after the query parameters. However, unlike query parameters, fragments are not sent to the server. To access a specific port <code>:(Port)</code> can be added to the host. <code>http://www.website.com:80/</code>.
+  	</p>
+  	<p>
+  		When a URL is entered in a web browser a request is sent to that server. This is most commonly done through HTTP. What is actually sent to the server is what's called a <em>request line</em>. In the following example: <code>http://www.website.com/foo</code> the request line looks like this <code>GET /foo HTTP/1.1</code> where <code>GET</code> is the <em>method</em>, <code>/foo</code> is the path and <code>HTTP/1.1</code> is the version. The <em>method</em> is what type of request we make to the server. GET is the generally for receiving information from the server and POST is generally for delivering information to the server. 
+  	</p>
+  	<p>
+  		The request line is followed by <em>Headers</em> in the form of <code>Name: value</code> that include additional information to the server. One such header is <em>user-agent</em> which include information about the client. This helps the Internet to function better as it can be used to differentiate malicious requests from legitimate requests. Another header is <em>Host</em>. This specifies which website the request is for which is essential if a server hosts several websites. 
+  	</p>
+  	<p>
+  		The format of the response from the server is similar to the request. It's called the "status line" and consists of <em>version</em>, <em>status code</em> and <em>reason phrase</em>. An example of a status line could look like this: <code>HTTP/1.1 200 OK</code>. The HTTP response also contain headers such as information about date, server and content.   
+  	</p>
+  	<p>
+  		There are 2 main classifications when it comes to server responses: static and dynamic. Static content are basically pre-written files delivered directly to the client. Dynamic content are files constructed by a <em>web application</em> in real-time. 
+  	</p>
+  	<hr>
+  	<h3>Forms and Validation</h3>
+  	<p>
+  		Forms are useful to gather data. Forms are created in HTML through the <code>&lt;form&gt;</code> element. Within <code>&lt;form&gt;</code>, several other elements can be added such as <code>&lt;input&gt;</code>, <code>&lt;label&gt;</code> and <code>&lt;button&gt;</code>. It's through the attributes we control the behavior of our form. For example in: <code>&lt;form action="/foo"&gt;</code> it's the <code>action</code> attribute that defines that the data in the form will be submitted to <code>/foo</code>.
+  	</p>
+  	<p>
+  		For the form to be secure and user friendly we need to <em>validate</em> the input and direct the users accordingly so that we get good data. An example could be to make sure that a date or an e-mail address is valid. This can be done by constructing a function that validates the input or if applicable, use a built-in function. We could also restrict the possible inputs.         
+  	</p>
+    <p>
+      We also want to make sure that the inputted data does not interfere with our code for security reasons. A way of doing this is by <em>escaping</em> certain characters. Escaping is basically converting certain characters so that they render correctly on the page and are not interpreted as part of the code and alters the behavior. Again, here we can often use built-in functions. For example, when working with Jinja2 we can set <code>autoescape=true</code> and then turn off auto-escaping when necessary.   
+    </p>
+    <hr>
+  	<h3>Templates</h3>
+  	<p>
+      A template library is a library to build complicated strings. Jinja2 is one such library used in Python. The concept of templates is to combine, in our case, HTML and Python to create dynamic web applications. By using templates for our HTML we are able to avoid repetition by reusing a set format over and over again. We can combine the power of classes and functions in a language like Python with the visual presentation of HTML and CSS.      
+    </p>
+    <p>
+      When working with Jinja2 we first need to import the library to our python file. 
+    </p>
+    <img class="left-img" src="/static/jinja2_setup.png" alt="jinja2 setup img">
+    <p>
+      Here we have set up the path for our templates, defined where Jinja2 can load the files from and used an extension to allow for auto-escaping.  
+    </p>
+    <img class="left-img" src="/static/extendblock.png" alt="extendblock img">
+    <p>
+      Here we can see two examples of the benefits of using templates to avoid repetition:
+    </p>
+    <ol>
+      <li>The use of <code>extendblock</code> to make use of index.html without having to include the HTML code on every page.</li>
+      <li>The use of a <code>for loop</code> to generate HTML paragraphs with text stored in the list <code>ABOUT_HTML</code> in the main python file.</li>
+    </ol>
+    <p>
+      By avoiding repetition it's easier to update and make changes to the web page as you only need to change the template to implement changes and updates. Same is true for errors as they will be confined to one place and therefore makes it easier to both find and fix. 
+    </p>
+  	<hr>
+  	<h3>Databases</h3>
+  	<p>
+      <em>"A program that stores and retrieves large amounts of structured data"</em>
+    </p>
+    <p>
+      ACID stands for <em>Atomicity</em>, <em>Consistency</em>, <em>Isolation</em> and <em>Durability</em>. These properties are meant to guarantee that database transactions are processed reliably. In short: 
+    </p>
+    <ul>
+      <li>Atomicity - means that a transaction is done in its entirety or not at all.</li>
+      <li>Consistency - means that data is stored in a valid way, according to all defined rules.</li>
+      <li>Isolation - means that every transaction is sequenced correctly irregardless of any concurrent transactions.</li>
+      <li>Durability - means that data isn't lost due to power failure, crashes or other malfunctions</li>
+    </ul>
+    <p>
+      For a more extensive explanation please refer to this wikipedia <a href="https://en.wikipedia.org/?title=ACID">article</a>
+    </p>
+    <p>
+      In general, there are two main types of databases: <em>Relational</em> and <em>Non-relational</em>. Relational databases are organized in tables (or <em>realtions</em>) with columns and rows. Each row is an instance and each row has a unique <em>key</em>. Rows can in turn be linked to other rows is a different table through its key. Examples of relational databases are: MySQL, SQLite and PostgreSQL.  
+    </p>
+    <p>
+      Non-relational databases does not incorporate the table/key model. Its strengths are its scalability and fast throughput of large amounts of data, as it's not confined to the relational structure of tables and its hierarchy. One such database is the Google <a href="https://cloud.google.com/datastore/docs/concepts/overview">Cloud Datastore</a>, which we are using for this project.   
+    </p>
+    <p>
+      SQL stands for <em>Structured Query Language</em> and is a language for managing data stored in databases. A basic database query look like this: <code>SELECT * FROM links WHERE id=5</code>. This means fetch (<code>SELECT</code>) all columns (<code>*</code>) from (<code>FROM</code>) table 'links' (<code>links</code>) where (<code>WHERE</code>) column 'id' (<code>id</code>) has a value of 5 (<code>=5</code>). Or put in a different way: <em>collect all rows that have 'id' value of 5</em>.  
+    </p>
+  </div>
+</section>
+{% endblock %}

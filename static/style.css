@@ -1,0 +1,423 @@
+/*====================
+WRITTEN BY JIM NORDING
+jimnording@gmail.com
+====================*/
+* {
+	-webkit-font-smoothing: antialiased;
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+	        -ms-box-sizing: border-box;
+	            box-sizing: border-box;
+}
+
+body {
+	background-color: #eaeaea;
+	font-family: "Droid Sans", sans-serif;
+	font-size: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+h1 {
+	font-size: 120%;
+	font-weight: normal;
+	margin: 14px 20px 0 20px;
+}
+
+h2 {
+	display: inline-block;
+	font-size: 120%;
+	font-weight: normal;
+	margin: 0;
+}
+
+h3 {
+	font-size: 110%;
+}
+
+h4 {
+	margin: 14px 20px;
+}
+
+img {
+	max-width: 100%;
+}
+
+
+/*============================ Navbar ==================================*/
+
+.navbar {
+	height: 40px;
+} 
+
+.nav {
+	background-color: #333;
+	color: white;
+	font-family: "Droid Sans", sans-serif;
+	font-weight: normal;
+	font-size: 100%;
+	letter-spacing: 5px;
+	margin: 0;
+	padding: 0 10px;
+	width: 100%;
+}
+
+.nav-list {
+	margin: 0;
+	padding: 0;
+}
+
+.nav-item {
+	box-sizing: border-box;
+	display: inline-block;
+	margin: 5px 10px;
+
+}
+
+.nav a {
+	color: white;
+	/*display: block;*/
+	line-height: 2em;
+	padding: 0;
+	text-decoration: none;
+
+}
+
+.nav a:hover {
+	color: orange;
+	text-decoration: none;
+}
+
+
+
+/* Used the "code" CSS from the Udacity website and tweaked it a little bit */
+
+code {
+	background-color: #eaeaea;
+	border: solid 1px #dcdcdc;
+	border-radius: 0;
+	color: black;
+	display: inline;
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+	font-size: 80%;
+	max-height: 23px;
+	max-width: 100%;
+	padding: 0 4px;
+}
+
+
+/*======= Forms styling start =======*/
+
+form {
+	font-family: "Droid Sans", sans-serif;
+	font-size: 100%;
+	margin-top: 0px;
+}
+
+input {
+	border: 1px solid #ccc;
+	border-radius: 1px;
+	box-shadow: inset 0 1px rgba(0, 0, 0, 0.075);
+	color: #888;
+	font-family: "Droid Sans", sans-serif;
+	font-size: 100%;
+	height: 37px;
+	line-height: 30px;
+	margin: 2px 6px 16px 0;
+	outline: 0;
+	padding: 5px 0 5px 5px;
+	width: 30%;	
+}
+
+textarea {
+	border: 1px solid #ccc;
+	font-family: "Droid Sans", sans-serif;
+	font-size: 100%;
+	height: 100px;
+	outline: 0;
+	padding: 5px 0px 0px 5px;
+	resize: none;
+	width: 75%;	
+}
+
+button {
+	background: gray;
+	border: none;
+	border-radius: 2px;
+	color: white;
+	cursor: pointer;
+	font-family: "Droid Sans", sans-serif;
+	font-size: 100%;
+	margin-top: 10px;
+	padding: 5px 15px;	
+}
+
+/*============== Forms styling end ==============*/
+
+
+/* Found the linear-gradient at https://css-tricks.com/examples/hrs/ */
+hr {
+	background: #333;
+    background-image: -webkit-linear-gradient(left, #ccc, #999, #ccc);
+    background-image:    -moz-linear-gradient(left, #ccc, #999, #ccc);
+    background-image:     -ms-linear-gradient(left, #ccc, #999, #ccc);
+    background-image:      -o-linear-gradient(left, #ccc, #999, #ccc);
+    border: 0;
+   	display: block;
+   	height: 1px;
+   	margin: 40px auto;
+   	width: 100%;
+}
+
+.headline {
+	background-color: black;
+	font-family: sans-serif;
+	font-weight: normal;
+	/*min-height: 55px;*/
+	margin: 0;
+	padding: 0;
+	position: top;
+	width: 100%;
+}
+
+.main-header {
+	background-color: black;
+	color: white;
+	display: inline-block;
+	font-family: sans-serif;
+	font-weight: normal;
+	letter-spacing: 5px;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.u-color {
+	color: orange;
+	font-family: sans-serif;
+	font-weight: normal;
+}
+
+.sub-container {
+	background-color: black;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.sub-header {
+	background-color: black;
+	color: white;
+	font-family: sans-serif;
+	font-weight: normal;
+	letter-spacing: 5px;
+	margin: 0;
+	padding: 0;
+	width: 60%; 
+}
+
+.navstack {
+	background-color: black;
+	color: white;
+	display: none;
+	margin: 0;
+	padding: 30px 30px 14px 30px;
+	text-align: right;
+	width: 40%; 
+}
+
+
+/*========= Lesson-boxes =========
+In order of position top to bottom*/
+.lesson-box {
+	background-color: white;
+	border: 1px solid #d2d2d2;
+	border-radius: 1px;
+	box-shadow: 1px 1px 0.5px 0.5px #d2d2d2;
+	margin: 60px auto;
+	max-width: 960px;
+	padding: 0;	
+}
+
+.lesson-box-title {
+	background-color: orange;
+	border-bottom: 1px solid #d2d2d2;
+	border-radius: 1px 1px 0 0;
+	color: white;
+	letter-spacing: 3.2px;
+	margin: 0;
+	padding: 17px;	
+}
+
+.lesson-box-content {
+	background-color: white;
+	border-radius: 0 0 1px 1px;
+	font-size: 100%;
+	line-height: 150%;
+	margin: 0;
+	padding: 32px 48px;
+}
+
+.lesson-box-bottom {
+	border-radius: 0 0 1px 1px;
+	border-top: 1px solid #d2d2d2;
+	font-size: 80%;
+	max-height: 45px;
+	margin: 0;
+	padding: 0px 48px;
+	text-align: right;
+}
+
+.linked-in {
+	margin-top: 30px;
+}
+
+
+/*============== Guesbook boxes ================= 
+Created new .guestbook for the Guestbook
+some are same as .lesson but makes code easier
+to understand and gives the option to change only
+guestbook css in future. Some styling ideas from
+http://purecss.io/forms/ and 
+http://www.sanwebe.com/2013/10/css-html-form-styles */
+
+
+.guestbook-box {
+	background-color: white;
+	border: 1px solid #d2d2d2;
+	border-radius: 1px;
+	box-shadow: 1px 1px 0.5px 0.5px #d2d2d2;
+	margin: 60px auto;
+	max-width: 960px;
+	padding: 0;	
+}
+
+.guestbook-box-title {
+	background-color: gray;
+	border-bottom: 1px solid #d2d2d2;
+	border-radius: 1px 1px 0 0;
+	color: white;
+	letter-spacing: 3.2px;
+	margin: 0;
+	padding: 17px;
+	white-space: nowrap;
+}
+
+.guestbook-box-form {
+	background-color: white;
+	border-bottom: 2px solid #d2d2d2;
+	border-radius: 0 0 1px 1px;
+	box-shadow: 0 15px 12px -6px rgba(210, 210, 210, 1);
+	font-size: 100%;
+	line-height: 150%;
+	margin: 20px 0 20px 0;
+	padding: 32px 48px;
+}
+
+.guestbook-box-posts {
+
+	background-color: white;
+	border-top: 50px;
+	border-radius: 0 0 1px 1px;
+	font-size: 100%;
+	line-height: 150%;
+	margin-right: 30px;
+	padding: 32px 48px;
+}
+
+/* Just to get the author in guestbook on the right */
+.signature {
+	text-align: right;
+}
+
+.left-img {
+	display: block;
+	margin: 30px 0;
+}
+
+
+/*============== Media queries =================*/
+
+@media screen and (max-width: 700px) {
+
+	.navstack {
+		display: inline;
+	}
+
+	.nav {
+    	z-index: 10;
+    	background-color: rgba(51, 51, 51, 0.8);
+    	width: 150px;
+    	padding: 0;
+    	position: absolute;
+    	/* This trasform moves the drawer off canvas. */
+    	-webkit-transform: translate(-300px, 0);
+    	transform: translate(-300px, 0);
+    	/* Optionally, we animate the drawer. */
+    	-webkit-transition: -webkit-transform 0.3s ease;
+    	transition: transform 0.3s ease;
+  	}
+
+  	.nav.open {
+    	-webkit-transform: translate(0, 0);
+    	transform: translate(0, 0);
+  	}
+
+  	.nav-item {
+    	display: list-item;
+    	border-bottom: 1px solid #E0E0E0;
+    	margin: 0;
+    	padding: 15px;
+    	line-height: 15px;
+    	list-style: none;
+    	width: 100%;
+    	text-align: left;
+  	}
+
+	.lesson-box {
+		width: 100%;
+		margin: 0;
+	}
+
+	.lesson-box-title {
+		min-height: 40px;
+		padding: 10px 20px;
+	}
+
+	.lesson-box-content {
+		padding: 20px 20px;
+	}
+
+	.guestbook-box {
+		margin: 0;
+		width: 100%;
+	}
+
+	.guestbook-box-title {
+		min-height: 40px;
+		padding: 10px 20px;
+	}
+
+	.guestbook-box-form {
+		padding: 20px 20px;
+	}
+
+	input, textarea {
+		width: 100%;
+	}
+}
+
+
+@media screen and (max-width: 960px) {
+	
+	.lesson-box {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.guestbook-box {
+		margin-top: 0;
+	}
+
+} 

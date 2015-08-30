@@ -1,0 +1,86 @@
+{% extends "index.html" %}
+{% block content %}
+<section class="lesson-box">
+  <div class="lesson-box-title"><h2>Stage 2: Programming, Computer Science and Python</h2></div>
+  <div class="lesson-box-content">
+    <h3>Programming as a Language</h3>
+      <p>
+        Everything that a computer executes is done through a program. A program is an instruction with a set of rules that the computer can understand and follow, written in a <em>programming language</em>.
+      </p>
+      <p>
+        The reason we don't use a natural language in programming, is that there's generally too much <em>ambiguity</em> regarding the meaning of a word or a sentence. Also, a natural language tend to be very verbose.  
+      </p>
+      <p>
+        The <em>Backus-Naur Form <a href="http://en.wikipedia.org/wiki/Backus%E2%80%93Naur_Form">(BNF)</a></em> is a notation technique to describe the language so that the rules of interpretation are unambiguous. By using this method for programming languages, the programmer and computer can communicate in an equitable way  as well as making sure that the computer understands and executes the code correctly. BNF is like grammar in a natural language. It's a set of rules to describe how we apply and interpret the language.   
+      </p>
+      <p>
+        Here's an example of a basic BNF logic:
+      </p>
+      <p>
+        <code>&lt;symbol&gt; = _expression_</code>
+      </p>
+      <p>
+        Where <code>&lt;symbol&gt;</code> is <em>Non-terminal</em> and <code>_expression_</code> can be <em>Non-terminal</em> or <em>Terminal</em>.
+      </p>
+      <p>
+        Since there are many different languages we can use to write a program, there needs to be a way for the computer to understand all these different languages. This is done through an <em>interpreter</em>. The interpreter is a program itself, that "translates" the code so that it can be executed by the computer. 
+      </p>
+      <p>
+        (<em>Python</em> is the programming language we'll be using for this course and the notes that follow will be referring to to that language specifically)
+      </p>
+      <hr>
+      <h3>Strings and Variables</h3>
+      <p>
+        <a href="http://en.wikipedia.org/wiki/Variable_(computer_science)">Variables</a> are used to define and contain <em>values</em>:
+        <code>var_name = expression</code> - where <code>var_name</code> is the <em>identifier</em> and <code>expression</code> is the <em>value</em>. The <code>=</code> means that the right side of the <em>variable</em> goes into the left side, rather than constituting an equal sign. <em>Variables</em> are useful to hold values that might be used repetitively and also give a better understanding of what the code is executing, as long as the variable is given a descriptive <em>identifier</em>. 
+      </p>
+      <p>
+        A <a href="http://en.wikipedia.org/wiki/String_%28computer_science%29">string</a> is a sequence of <u>characters</u>. It needs to be contained within <u>either</u> single or double quotes: <code>identifier = "This is a String"</code> is the same as <code>identifier = 'This is a String'</code>. It's important to note that <em>characters</em> are different from a pure number value in the sense that: <code>2 + 2</code> gives <code>4</code> whereas <code>'2' + '2'</code> gives <code>22</code>.
+      </p>
+      <hr>
+      <h3>Functions</h3>
+      <p>
+        <em>Functions</em> process <em>input</em> and produce an <em>output</em>. You make a function by <em>defining</em> <code>def</code> the number of inputs (parameters) the function will run and then what the function should output <code>return</code>. You can then use the function by running (calling) it, by using <code>print</code> for example, and giving the value(s) for the inputs. It should then output the <code>return</code> you defined. 
+      </p>
+      <p>
+        <code>def functionName(input1,input2,input3,...):</code>
+      </p>
+      <p>
+        <em>Functions</em> are very useful as they can be called any number of times and also be used within other <em>functions</em> and therefore avoids code repetition.
+      </p>
+      <hr>
+      <h3>Evaluate and Loop</h3>
+      <p>
+        You can evaluate expressions with the <code>if</code> statement. The if statement evaluates a <em>test expression</em> as TRUE or FALSE (boolean). If the expression is TRUE, it moves down within its <em>block</em>. If the expression is FLASE it moves on to the next <em>block</em> which can be an <code>else</code> function which defines the execution process in case of FALSE.  
+      </p>
+      <p>
+        To <em>loop</em> blocks we use the <code>while</code> <em>control flow statement</em>. It also has a <em>test expression</em> that it evaluates as TRUE or FALSE. It will continue to run the block(s) until the test statement is FALSE or a <em>break statement</em> becomes TRUE.  
+      </p>
+      <hr>
+      <h3>Structured Data</h3>
+      <p>
+        Lists can be used to store data, in a similar way as in <em>Variables</em> but in a more structured way. The list is contained within brackets: <code>listName = [string, number, list]</code> Lists can even contain other lists (nested). The data stored in lists are <em>mutable</em>, meaning the stored string or number can be changed. The data stored in lists are indexed in the same way as strings but instead of every character having a number, every list entry has a number starting from 0. <code>date_list = ['day', 'month', 'year']</code> where day has index 0 <code>date_list[0]</code> and year has index 2 <code>date_list[2]</code>. 
+      </p>
+      <p>
+        The <code>append</code> method is used to add data entries to lists <em>(mutate)</em>. It will add a new entry to an <u>existing</u> list. <code>date_list.append('century')</code> will add the string <code>'century'</code> to the previous list. The <code>+</code> operand can be used to concatenate lists and in doing so creating a new list.   
+      </p>
+      <p>
+        The <code>len</code> method can be used to give you the length of a string or list in number of characters or list entries (nested lists will only have 1 number in length). It's important to note however that the output value starts from 1 and not 0, so will not correspond to the index value. <code>len(date_list)</code> would now return 4 but the last entry <code>'century'</code> has index 3. 
+      </p>
+      <p>
+        <code>For</code> loops are similar to <code>while</code> loops but run for a set number of times as defined by <code>range</code> or until the end of a <em>string</em> or a <em>list</em>. <code>For</code> loops, unlike <code>while</code> loops, don't use a <em>condition statement</em>: <code>for e in p:</code> will loop trough the whole string or list p while <code>for e in range(0,6)</code> will loop from 0 to 5 (6 times).
+      </p>
+      <hr>
+      <h3>A methodical way to program</h3>
+      <p>
+        When writing code it's important to structure the task in a methodical way so that you have a clear understanding of what the different elements of the task requires. First of all it's important to define inputs and outputs. It can be a good idea to write some <em>pseudo code</em> to get a rough idea of how you should structure your work. It can also be useful to define a number of test cases to identify different possible scenarios that the code should be able to process and to make sure the the code is executing in the way you envision it to do. You should break down the problem in different areas and then work on one at a time; define the function, test it and the move on to the next one. Sometimes you might have to go back to a function and refine it at a later stage but the general idea is to start with a <em>big picture</em> approach and then zoom in and refine the different parts of the code as you progress.       
+      </p>
+      <p>
+        Program defensively. You should consider who the user of your program will be and write your code to take into account possible errors. Try to output helpful guidance if there's an input error for example.    
+      </p>
+      <p>
+        Another very important aspect of coding is <em>debugging</em>. Again, a methodical approach is essential to locate and fix your code. <code>print</code>, <code>return</code> and <code>test()</code>-functions can be used to make sure that the different functions are giving you the desired output. And remember that the computer <em>reads</em> code literally so simple misspellings and typos will stop the code from executing correctly. It's great to use other programmers solution to save time and to get new ideas but remember to change to code as required to fit into your program.
+      </p>  	
+	</div>
+</section>
+{% endblock %}
