@@ -46,7 +46,7 @@ img {
 }
 
 
-/*============================ Navbar ==================================*/
+/*========================= Navbar Start ============================*/
 
 .navbar {
 	height: 40px;
@@ -90,6 +90,7 @@ img {
 	text-decoration: none;
 }
 
+/*============================ Navbar End =============================*/
 
 
 /* Used the "code" CSS from the Udacity website and tweaked it a little bit */
@@ -108,7 +109,7 @@ code {
 }
 
 
-/*======= Forms styling start =======*/
+/*======================== Forms styling start ===========================*/
 
 form {
 	font-family: "Droid Sans", sans-serif;
@@ -154,7 +155,7 @@ button {
 	padding: 5px 15px;	
 }
 
-/*============== Forms styling end ==============*/
+/*========================== Forms styling end =============================*/
 
 
 /* Found the linear-gradient at https://css-tricks.com/examples/hrs/ */
@@ -175,7 +176,6 @@ hr {
 	background-color: black;
 	font-family: sans-serif;
 	font-weight: normal;
-	/*min-height: 55px;*/
 	margin: 0;
 	padding: 0;
 	position: top;
